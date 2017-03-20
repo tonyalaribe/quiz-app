@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Test on Tochis CT Companion</title>
-    <link>http://your.base.url/tags/test/</link>
+    <link>https://tonyalaribe.github.io/quiz-app/tags/test/</link>
     <description>Recent content in Test on Tochis CT Companion</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 19 Aug 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://your.base.url/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tonyalaribe.github.io/quiz-app/tags/test/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Second Post</title>
-      <link>http://your.base.url/post/second/</link>
+      <link>https://tonyalaribe.github.io/quiz-app/post/second/</link>
       <pubDate>Wed, 19 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://your.base.url/post/second/</guid>
+      <guid>https://tonyalaribe.github.io/quiz-app/post/second/</guid>
       <description>
 
 &lt;p&gt;Lorem Ipsum is simply dummy text of the printing  and typesetting industry.
@@ -61,10 +61,10 @@ including versions of Lorem Ipsum.&lt;/p&gt;
     
     <item>
       <title>First Post</title>
-      <link>http://your.base.url/post/first/</link>
+      <link>https://tonyalaribe.github.io/quiz-app/post/first/</link>
       <pubDate>Tue, 18 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://your.base.url/post/first/</guid>
+      <guid>https://tonyalaribe.github.io/quiz-app/post/first/</guid>
       <description>&lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s,
 when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -83,18 +83,11 @@ It was popularised in the 1960s with the release of Letraset sheets containing
 Lorem Ipsum passages, and more recently with desktop publishing software like
 Aldus PageMaker including versions of Lorem Ipsum.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var myfunc = function() {
-    t = this;
-    t.somemethod = function() {
-        return 1;
-    };
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s.
+&lt;p&gt;&lt;img src=&#34;https://tonyalaribe.github.io/quiz-app/1.png&#34; alt=&#34;image 1&#34; /&gt;
 It was popularised in the 1960s with the release of Letraset sheets containing
-Lorem Ipsum passages, and more recently with desktop publishing software like
-Aldus PageMaker including versions of Lorem Ipsum.&lt;/p&gt;
+Lorem Ipsum passages, and more recently with desktop publishing software like&lt;/p&gt;
+
+&lt;p&gt;Aldus PageMaker including versions of Lorem Ipsum.&lt;/p&gt;
 </description>
     </item>
     

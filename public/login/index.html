@@ -11,7 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="My thoughts and rambles">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Tochis CT Companion</title>
+        <title>Login</title>
         
         <meta name="mobile-web-app-capable" content="yes">
         <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
@@ -28,7 +28,7 @@
         <link rel="stylesheet" href="/css/ionicons.min.css"/>
         <link rel="stylesheet" href="/css/material.grey-orange.min.css"/>
         <link rel="stylesheet" href="/css/styles.css"/>
-        
+          
 
         <script>
           console.log(window.location.pathname);
@@ -45,7 +45,9 @@
 
 <body style="background-image: url('/images/background.jpg');">
     
-        <div class="hugo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
+        
+            <div class="hugo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
+        
     
 
         
@@ -85,57 +87,46 @@
 
 
 <div class="hugo-blog__list mdl-grid">
-    <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+    <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col" style="text-align:center">
         
-        <div class="mdl-card__media mdl-color-text--grey-50">
-            <h3>All Articles:</h3>
+        <div style="display:inline-block; padding-top:50px" >
+            <h3>login</h3>
+            <section>
+                <small id="info" style="display:block"></small>
+                <br/>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="username" >
+                <label class="mdl-textfield__label" for="username">Username...</label>
+              </div>
+              <br/>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="password" id="password">
+                <label class="mdl-textfield__label" for="password">Password...</label>
+              </div>
+              <br/>
+              <button class="mdl-button mdl-js-button mdl-button--raised  mdl-js-ripple-effect mdl-button--accent" onclick="submitLogin()">
+                Submit
+              </button>
+
+              <script>
+                function submitLogin(){
+                  var username = document.getElementById("username").value;
+                  var password = document.getElementById("password").value;
+
+                  console.log(username)
+                  console.log(password)
+
+                  if (username == "admin"&& password == "p@ssw0rd"){
+                    localStorage.setItem("loggedInTochi", true);
+                    window.location.assign("/quiz-app/");
+                  }else{
+                      document.getElementById("info").innerHTML="wrong username or password"
+                  }
+                }
+              </script>
+            </section>
+
         </div>
-
-        
-        <!-- begin pagination partial //-->
-
-
-<!-- end pagination partial //--> 
-
-        
-        <div class="mdl-card__list-item mdl-color-text--grey-600">
-            
-            
-            <a href="/quiz-app/post/second/"><h5 class="mdl-color-text--grey-600" style="padding-left:25px">Second Post</h5></a>
-        </div>
-
-         
-
-        
-        <div class="mdl-card__list-item mdl-color-text--grey-600">
-            
-            
-            <a href="/quiz-app/post/first/"><h5 class="mdl-color-text--grey-600" style="padding-left:25px">First Post</h5></a>
-        </div>
-
-         
-
-        
-        <div class="mdl-card__list-item mdl-color-text--grey-600">
-            
-            
-            <a href="/quiz-app/about/"><h5 class="mdl-color-text--grey-600" style="padding-left:25px">About Me</h5></a>
-        </div>
-
-         
-
-        
-        <div class="mdl-card__list-item mdl-color-text--grey-600">
-            
-            
-            <a href="/quiz-app/login/"><h5 class="mdl-color-text--grey-600" style="padding-left:25px">Login</h5></a>
-        </div>
-
-         
-        <!-- begin pagination partial //-->
-
-
-<!-- end pagination partial //-->
     </div>
 </div>
 
@@ -180,43 +171,8 @@
         <div class="mdl-layout__obfuscator"></div>
     </div>
     <script src="/js/material.min.js"></script>
+     
     
-     <script>
-    Array.prototype.forEach.call(document.querySelectorAll('.mdl-card__media'), function(el) {
-        var link = el.querySelector('a');
-        if (!link) {
-            return;
-        }
-        var target = link.getAttribute('href');
-        if (!target) {
-            return;
-        }
-        el.addEventListener('click', function() {
-            location.href = target;
-        });
-    });
-</script> <script>
-    (function () {
-    var VISIBLE_CLASS = "is-showing-options",
-        fab_btn  = document.getElementById("fab_btn"),
-        fab_ctn  = document.getElementById("fab_ctn"),
-        showOpts = function(e) {
-          var processClick = function (evt) {
-            if (e !== evt) {
-              fab_ctn.classList.remove(VISIBLE_CLASS);
-              fab_ctn.IS_SHOWING = false;
-              document.removeEventListener("click", processClick);
-            }
-          };
-          if (!fab_ctn.IS_SHOWING) {
-            fab_ctn.IS_SHOWING = true;
-            fab_ctn.classList.add(VISIBLE_CLASS);
-            document.addEventListener("click", processClick);
-          }
-        };
-    fab_btn.addEventListener("click", showOpts);
-    }.call(this));
-</script>
 </body>
 </html>
 

@@ -1,4 +1,4 @@
-baseurl = "http://your.base.url/"
+baseurl = "https://tonyalaribe.github.io/quiz-app/"
 languageCode = "en-us"
 title = "Tochis CT Companion"
 theme = "HugoMDL"
@@ -20,4 +20,3 @@ MetaDataFormat = "yaml"
     facebook = "https://facebook.com/firstname_lastname/"
     copyrightyear = "2015"
     frontpageposts = 6 #number of post cards to display on frontpage
-    
