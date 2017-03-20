@@ -5,7 +5,7 @@
     <meta name="generator" content="Hugo 0.16" />
         
         <link rel="icon" type="image/png" href="/images/favicon.ico">
-        
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="My thoughts and rambles">
@@ -22,19 +22,31 @@
         
         <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
         <meta name="msapplication-TileColor" content="#3372DF">
-    
+
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"/>
         <link rel="stylesheet" href="/css/ionicons.min.css"/>
         <link rel="stylesheet" href="/css/material.grey-orange.min.css"/>
         <link rel="stylesheet" href="/css/styles.css"/>
         
+
+        <script>
+          console.log(window.location.pathname);
+          console.log(window.location.pathname!="/login/");
+          var path = window.location.pathname;
+          var loggedin = localStorage.getItem("loggedInTochi");
+          if (!loggedin && path != "/login/"){
+            console.log("redirect");
+            window.location.assign("/login/");
+          }
+
+        </script>
 </head>
 
 <body style="background-image: url('/images/background.jpg');">
-     
+    
         <div class="hugo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
     
-        
+
         
     <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--scroll">
         <div class="mdl-layout__header-row">
@@ -45,8 +57,8 @@
             
             <nav class="mdl-navigation">
                 <a class='mdl-navigation__link ' href="/">Home</a>
-                <a class='mdl-navigation__link ' href="/post">Articles</a>
                 <a class='mdl-navigation__link ' href="/about">About</a>
+                <a class="mdl-navigation__link" href="#" onClick="logout()">Logout</a>
             </nav>
         </div>
     </header>
@@ -54,13 +66,22 @@
         
         <nav class="mdl-navigation">
             <a class='mdl-navigation__link ' href="/">Home</a>
-            <a class='mdl-navigation__link ' href="/post">Articles</a>
+            
             <a class='mdl-navigation__link ' href="/about">About</a>
+            <a class="mdl-navigation__link" href="#" onClick="logout()">Logout</a>
         </nav>
     </div>
+    <script>
+            function logout(){
+                localStorage.removeItem("loggedInTochi");
+                window.location.assign("/login");
+              }
+
+    </script>
 
     
     <main class="mdl-layout__content">
+
     
     <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--scroll">
         <div class="mdl-layout__header-row">
@@ -71,8 +92,8 @@
             
             <nav class="mdl-navigation">
                 <a class='mdl-navigation__link ' href="/">Home</a>
-                <a class='mdl-navigation__link ' href="/post">Articles</a>
                 <a class='mdl-navigation__link ' href="/about">About</a>
+                <a class="mdl-navigation__link" href="#" onClick="logout()">Logout</a>
             </nav>
         </div>
     </header>
@@ -80,10 +101,18 @@
         
         <nav class="mdl-navigation">
             <a class='mdl-navigation__link ' href="/">Home</a>
-            <a class='mdl-navigation__link ' href="/post">Articles</a>
+            
             <a class='mdl-navigation__link ' href="/about">About</a>
+            <a class="mdl-navigation__link" href="#" onClick="logout()">Logout</a>
         </nav>
     </div>
+    <script>
+            function logout(){
+                localStorage.removeItem("loggedInTochi");
+                window.location.assign("/login");
+              }
+
+    </script>
 
 
 <h3>Generic List Heading</h3>
@@ -91,22 +120,22 @@
 
 
 <div class="section">
-    <h5><a class="black-text" href="http://your.base.url/post/second/">Second Post</a></h5> 
+    <h5><a class="black-text" href="https://tonyalaribe.github.io/quiz-app/post/second/">Second Post</a></h5> 
     <b><a class="black-text" href="http://example.com/">Firstname Lastname</a></b>
     <br>Wed, Aug 19, 2015
 
-    <a href="http://your.base.url/post/second/" class="grey-text text-darken-3 waves-effect waves-light btn-flat"><span>Read More</span></a>
+    <a href="https://tonyalaribe.github.io/quiz-app/post/second/" class="grey-text text-darken-3 waves-effect waves-light btn-flat"><span>Read More</span></a>
 </div>
 <div class="divider"></div>
 
 
 
 <div class="section">
-    <h5><a class="black-text" href="http://your.base.url/post/first/">First Post</a></h5> 
+    <h5><a class="black-text" href="https://tonyalaribe.github.io/quiz-app/post/first/">First Post</a></h5> 
     <b><a class="black-text" href="http://example.com/">Uchechu Ogbuagwu</a></b>
     <br>Tue, Aug 18, 2015
 
-    <a href="http://your.base.url/post/first/" class="grey-text text-darken-3 waves-effect waves-light btn-flat"><span>Read More</span></a>
+    <a href="https://tonyalaribe.github.io/quiz-app/post/first/" class="grey-text text-darken-3 waves-effect waves-light btn-flat"><span>Read More</span></a>
 </div>
 <div class="divider"></div>
 
@@ -192,3 +221,4 @@
 </script>
 </body>
 </html>
+

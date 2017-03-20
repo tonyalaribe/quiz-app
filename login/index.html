@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -10,7 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="My thoughts and rambles">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>About Me</title>
+        <title>Login</title>
         
         <meta name="mobile-web-app-capable" content="yes">
         <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
@@ -45,7 +46,7 @@
 <body style="background-image: url('/images/background.jpg');">
     
         
-            <div class="hugo-blog hugo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
+            <div class="hugo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
         
     
 
@@ -85,40 +86,50 @@
     <main class="mdl-layout__content">
 
 
-<div class="hugo-blog__posts mdl-grid about">
-  <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+<div class="hugo-blog__list mdl-grid">
+    <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col" style="text-align:center">
+        
+        <div style="display:inline-block; padding-top:50px" >
+            <h3>login</h3>
+            <section>
+                <small id="info" style="display:block"></small>
+                <br/>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="username" >
+                <label class="mdl-textfield__label" for="username">Username...</label>
+              </div>
+              <br/>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="password" id="password">
+                <label class="mdl-textfield__label" for="password">Password...</label>
+              </div>
+              <br/>
+              <button class="mdl-button mdl-js-button mdl-button--raised  mdl-js-ripple-effect mdl-button--accent" onclick="submitLogin()">
+                Submit
+              </button>
 
-    <div class="mdl-card__media about-media" style="background-image: url('/images/default.jpg'); background-color:#263238;">
-      <div class="profile-pic-container">
-        <div class="profilepic" style="background-image: url('/images/avatar.png');"></div>
-      </div>
+              <script>
+                function submitLogin(){
+                  var username = document.getElementById("username").value;
+                  var password = document.getElementById("password").value;
+
+                  console.log(username)
+                  console.log(password)
+
+                  if (username == "admin"&& password == "p@ssw0rd"){
+                    localStorage.setItem("loggedInTochi", true);
+                    window.location.assign("/");
+                  }else{
+                      document.getElementById("info").innerHTML="wrong username or password"
+                  }
+                }
+              </script>
+            </section>
+
+        </div>
     </div>
-
-    <div class="mdl-color-text--grey-700 mdl-card__supporting-text about-text">
-      <h3>Unical Radiography</h3>
-      <h6>Just a city boy, born and raised in South Detroit</h6>
-      <div class="hugo-content">
-      <p>jhhgjhhj</p>
-
-
-          
-          
-          <div class="list">
-            <h4>Recent Articles</h4>
-            <ul>
-              
-              <li><a href="/quiz-app/post/second/">Second Post</a></li>
-              
-              <li><a href="/quiz-app/post/first/">First Post</a></li>
-              
-            </ul>
-          </div>
-          
-      </div>
-    </div>
-
-  </div>
 </div>
+
             <footer class="mdl-mini-footer">
                 <div class="mdl-mini-footer--left-section">
                     

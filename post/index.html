@@ -6,7 +6,7 @@
     <meta name="generator" content="Hugo 0.16" />
         
         <link rel="icon" type="image/png" href="/images/favicon.ico">
-        
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="My thoughts and rambles">
@@ -23,19 +23,31 @@
         
         <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
         <meta name="msapplication-TileColor" content="#3372DF">
-    
+
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"/>
         <link rel="stylesheet" href="/css/ionicons.min.css"/>
         <link rel="stylesheet" href="/css/material.grey-orange.min.css"/>
         <link rel="stylesheet" href="/css/styles.css"/>
         
+
+        <script>
+          console.log(window.location.pathname);
+          console.log(window.location.pathname!="/login/");
+          var path = window.location.pathname;
+          var loggedin = localStorage.getItem("loggedInTochi");
+          if (!loggedin && path != "/login/"){
+            console.log("redirect");
+            window.location.assign("/login/");
+          }
+
+        </script>
 </head>
 
 <body style="background-image: url('/images/background.jpg');">
-     
+    
         <div class="hugo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
     
-        
+
         
     <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--scroll">
         <div class="mdl-layout__header-row">
@@ -46,8 +58,8 @@
             
             <nav class="mdl-navigation">
                 <a class='mdl-navigation__link ' href="/">Home</a>
-                <a class='mdl-navigation__link active' href="/post">Articles</a>
                 <a class='mdl-navigation__link ' href="/about">About</a>
+                <a class="mdl-navigation__link" href="#" onClick="logout()">Logout</a>
             </nav>
         </div>
     </header>
@@ -55,13 +67,22 @@
         
         <nav class="mdl-navigation">
             <a class='mdl-navigation__link ' href="/">Home</a>
-            <a class='mdl-navigation__link active' href="/post">Articles</a>
+            
             <a class='mdl-navigation__link ' href="/about">About</a>
+            <a class="mdl-navigation__link" href="#" onClick="logout()">Logout</a>
         </nav>
     </div>
+    <script>
+            function logout(){
+                localStorage.removeItem("loggedInTochi");
+                window.location.assign("/login");
+              }
+
+    </script>
 
     
-    <main class="mdl-layout__content">  
+    <main class="mdl-layout__content">
+
 
 <div class="hugo-blog__list mdl-grid">
     <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
@@ -77,28 +98,16 @@
 <!-- end pagination partial //-->  
 <div class="mdl-card__list-item mdl-color-text--grey-600">
     
-    <div class="meta">
-        <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
-        <div>
-            <strong><a href="http://example.com/">Firstname Lastname</a></strong>
-            <span>Aug 19, 2015</span>
-        </div>
-    </div>
     
-    <a href="/post/second/"><h5 class="mdl-color-text--grey-600">Second Post</h5></a>
-</div>  
+    <a href="/quiz-app/post/second/"><h5 class="mdl-color-text--grey-600" style="padding-left:25px">Second Post</h5></a>
+</div>
+  
 <div class="mdl-card__list-item mdl-color-text--grey-600">
     
-    <div class="meta">
-        <div class="minilogo" style="background-image: url('/images/avatar-64x64.png');"></div>
-        <div>
-            <strong><a href="http://example.com/">Uchechu Ogbuagwu</a></strong>
-            <span>Aug 18, 2015</span>
-        </div>
-    </div>
     
-    <a href="/post/first/"><h5 class="mdl-color-text--grey-600">First Post</h5></a>
-</div> 
+    <a href="/quiz-app/post/first/"><h5 class="mdl-color-text--grey-600" style="padding-left:25px">First Post</h5></a>
+</div>
+ 
         <!-- begin pagination partial //-->
 
 

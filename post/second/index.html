@@ -5,7 +5,7 @@
     <meta name="generator" content="Hugo 0.16" />
         
         <link rel="icon" type="image/png" href="/images/favicon.ico">
-        
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="My thoughts and rambles">
@@ -22,21 +22,33 @@
         
         <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
         <meta name="msapplication-TileColor" content="#3372DF">
-    
+
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"/>
         <link rel="stylesheet" href="/css/ionicons.min.css"/>
         <link rel="stylesheet" href="/css/material.grey-orange.min.css"/>
         <link rel="stylesheet" href="/css/styles.css"/>
           <link rel="stylesheet" href="/css/prism.css" />  
+
+        <script>
+          console.log(window.location.pathname);
+          console.log(window.location.pathname!="/login/");
+          var path = window.location.pathname;
+          var loggedin = localStorage.getItem("loggedInTochi");
+          if (!loggedin && path != "/login/"){
+            console.log("redirect");
+            window.location.assign("/login/");
+          }
+
+        </script>
 </head>
 
 <body style="background-image: url('/images/background.jpg');">
-     
-         
-            <div class="hugo-blog hugo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">  
-        
     
         
+            <div class="hugo-blog hugo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
+        
+    
+
         
     <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--scroll">
         <div class="mdl-layout__header-row">
@@ -47,8 +59,8 @@
             
             <nav class="mdl-navigation">
                 <a class='mdl-navigation__link ' href="/">Home</a>
-                <a class='mdl-navigation__link ' href="/post">Articles</a>
                 <a class='mdl-navigation__link ' href="/about">About</a>
+                <a class="mdl-navigation__link" href="#" onClick="logout()">Logout</a>
             </nav>
         </div>
     </header>
@@ -56,13 +68,22 @@
         
         <nav class="mdl-navigation">
             <a class='mdl-navigation__link ' href="/">Home</a>
-            <a class='mdl-navigation__link ' href="/post">Articles</a>
+            
             <a class='mdl-navigation__link ' href="/about">About</a>
+            <a class="mdl-navigation__link" href="#" onClick="logout()">Logout</a>
         </nav>
     </div>
+    <script>
+            function logout(){
+                localStorage.removeItem("loggedInTochi");
+                window.location.assign("/login");
+              }
+
+    </script>
 
     
     <main class="mdl-layout__content">
+
 
 <div class="hugo-blog__posts mdl-grid">
     <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
@@ -257,7 +278,7 @@ including versions of Lorem Ipsum.</p>
 
     <nav class="hugo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     
-    <a href="/post/first/" class="hugo-nav__button">
+    <a href="/quiz-app/post/first/" class="hugo-nav__button">
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
            <i class="icon ion-android-arrow-back"></i>
         </button>
