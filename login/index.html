@@ -32,12 +32,12 @@
 
         <script>
           console.log(window.location.pathname);
-          console.log(window.location.pathname!="/login/");
+          console.log(window.location.pathname!="/quiz-app/login/");
           var path = window.location.pathname;
           var loggedin = localStorage.getItem("loggedInTochi");
-          if (!loggedin && path != "/login/"){
+          if (!loggedin && path != "/quiz-app/login/"){
             console.log("redirect");
-            window.location.assign("/login/");
+            window.location.assign("/quiz-app/login/");
           }
 
         </script>
@@ -118,7 +118,7 @@
 
                   if (username == "admin"&& password == "p@ssw0rd"){
                     localStorage.setItem("loggedInTochi", true);
-                    window.location.assign("/");
+                    window.location.assign("/quiz-app/");
                   }else{
                       document.getElementById("info").innerHTML="wrong username or password"
                   }
